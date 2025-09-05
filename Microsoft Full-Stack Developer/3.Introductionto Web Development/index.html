@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Site</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio Site</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-me">
+            <h2>About Me</h2>
+            <p>A learner, a developer, a researcher. I enjoy programming and occasionally develop software to help others or for fun. I like learning new skills through online course platforms.</p>
+        </section>
+        
+        <section id="projects">
+            <div>
+                <h2>Projects</h2>
+                <div class="filter-container">
+                    <input type="text" id="techFilter" placeholder="Enter tech stack to filter......" class="filter-input">
+                    <div id="activeFilters" class="active-filters"></div>
+                </div>
+            </div>
+
+            <article class="project">
+                <h3>CvQt</h3>
+                <figure>
+                    <img src="1.png" alt="Screenshot of CvQt">
+                    <figcaption>A scientific image processing software</figcaption>
+                </figure>
+                <p>This is an image processing software developed using PySide (PyQt) and OpenCV. It features image processing, video processing, segmentation, tracking, and AI integration capabilities. The project incorporates multiple AI models and utilizes the latest desktop UI framework.</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Qt</span>
+                    <span>OpenCV</span>
+                    <span>PyTorch</span>
+                </div>
+            </article>
+
+            <article class="project">
+                <h3>ACICS</h3>
+                <figure>
+                    <img src="2.png" alt="Screenshot of ACICS">
+                    <figcaption>An upper-computer software </figcaption>
+                </figure>
+                <p>This program can be used to to control the temperature controller on a PC, assisting in conducting temperature-related research.</p>
+                <div class="tech-stack">
+                    <span>C#</span>
+                    <span>WPF</span>
+                    <span>Modbus</span>
+                </div>
+            </article>
+
+            <article class="project">
+                <h3>Minesweeper</h3>
+                <figure>
+                    <img src="3.png" alt="Screenshot of Minesweeper">
+                    <figcaption>A little game</figcaption>
+                </figure>
+                <p>A small game made using the .NET MAUI framework, just for me and my friends to play.</p>
+                <div class="tech-stack">
+                    <span>C#</span>
+                    <span>.NET MAUI</span>
+                </div>
+            </article>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Front-end Development
+                    <ul>
+                        <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                        <li>React, Vue.js, Angular</li>
+                        <li>Responsive web design</li>
+                        <li>UI/UX design</li>
+                    </ul>
+                </li>
+                <li>Back-end Development
+                    <ul>
+                        <li>C#, ASP.NET</li>
+                        <li>Python, Django, Flask</li>
+                        <li>Java, Spring Boot</li>
+                        <li>RESTful API design</li>
+                    </ul>
+                </li>
+                <li>Database
+                    <ul>
+                        <li>MySQL, SQL Server</li>
+                        <li>MongoDB, Redis</li>
+                        <li>Database optimization</li>
+                    </ul>
+                </li>
+                <li>Development Tools
+                    <ul>
+                        <li>Git, GitHub</li>
+                        <li>VS Code, Visual Studio</li>
+                        <li>Docker, CI/CD</li>
+                    </ul>
+                </li>
+                <li>Other
+                    <ul>
+                        <li>Problem-solving ability</li>
+                        <li>Teamwork</li>
+                        <li>Project Management</li>
+                        <li>Continuous learning</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Form</h2>
+            <p>If you have any questions or suggestions, please contact me using the form below.</p>
+            
+            <form action="#" method="post" aria-label="Contact Form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                        placeholder="Name"
+                        aria-required="true"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                        placeholder="your@email.com"
+                        aria-required="true"
+                    >
+                </div>
+        
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input 
+                        type="text" 
+                        id="subject" 
+                        name="subject" 
+                        required
+                        placeholder="Subject"
+                        aria-required="true"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="5" 
+                        required
+                        placeholder="..."
+                        aria-required="true"
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AGO</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
